@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:foreground="?android:selectableItemBackground">
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/card_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_side_margin"
+            android:layout_marginEnd="@dimen/card_side_margin"
+            android:layout_marginBottom="@dimen/card_bottom_margin"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:padding="20dp"
+                android:layout_height="match_parent">
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/percentage_bar_layout">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/stats_bar"
+                        app:indicatorSize="100dp"
+                        android:max="300"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        app:indicatorColor="@color/green"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/percentage_textview"
+                          android:gravity="center"
+                          android:layout_alignParentLeft="true"
+                          android:layout_alignParentRight="true"
+                          android:layout_centerVertical="true"
+                          android:text="--"/>
+
+            </RelativeLayout>
+
+            <TextView
+                    android:id="@+id/status_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="16dp"
+                    tools:text="Stats" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/percentage_bar_layout"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
